@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="fontawesome-free-5.8.1-web/css/all.min.css">
+    <link rel="stylesheet" href="dataTable/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="flickity/flickity.css">
+    <link rel="stylesheet" href="materialize/css/materialize.min.css">
+    <link rel="stylesheet" href="icheck-1.x/skins/all.css">
+    <link rel="stylesheet" href="toastr-master/build/toastr.min.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div style="margin: 20px auto auto auto;max-width:1170px;">
+        <div class="contenedor">
+            <div class="pasos">
+                <div class="paso uno active">
+                    <span>Datos Generales</span>
+                </div>
+                <div class="paso dos">
+                    <span>Verificación</span>
+                </div>
+                <div class="paso tres">
+                    <span>Confirmación</span>
+                </div>
+            </div>
+            <div class="formularios">
+                <div class="main-carousel">
+                    <div class="carousel-cell">
+                        <div style="margin: auto;width: 80%;">
+                            <div class="tipo">
+                                <div class="personal">
+                                    <label for="personalrdr">
+                                        <div class="icheckbox disabled">
+                                            <input type="radio" name="personalrdr" id="personalrdr">
+                                        </div>
+                                        <span>Inscripción Personal</span>
+                                    </label>
+                                </div>
+                                <div class="delegacion">
+                                    <label for="delegqacionrdr">
+                                        <div class="icheckbox disabled">
+                                            <input type="radio" name="personalrdr" id="delegqacionrdr">
+                                        </div>
+                                        <span>Inscripción Delegación</span>
+                                    </label>
+
+                                </div>
+                            </div>
+                            <br>
+                            <!--INSCRIPCION PERSONAL-->
+                            <form name="inscripcionPersonalForm" id="inscripcionPersonalForm">
+                                <div class="row">
+                                    <div class="input-field col s6">
+                                        <span class="fas fa-graduation-cap fa-2x"></span>
+                                        <select name="perfil">
+                                            <option value="0" disabled selected>Seleccione</option>
+                                            <option value="1">Estudiante</option>
+                                            <option value="2">Profesional</option>
+                                        </select>
+                                        <label class="label">Perfil</label>
+                                    </div>
+                                    <div class="col s6">
+                                        <div class="input-grupo">
+                                            <span class="fas fa-user-tie fa-2x"></span>
+                                            <div class="input-field">
+                                                <input id="nombres" name="nombres" disabled type="text" class="validate"
+                                                    required>
+                                                <label class="" for="nombres">Nombres</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col s6">
+                                        <div class="input-grupo">
+                                            <span class="fas fa-user-tie fa-2x"></span>
+                                            <div class="input-field">
+                                                <input id="apellidos" name="apellidos" disabled type="text"
+                                                    class="validate" required>
+                                                <label class="" for="apellidos">Apellidos</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col s6">
+                                        <div class="input-grupo">
+                                            <span class="fas fa-envelope fa-2x"></span>
+                                            <div class="input-field">
+                                                <input id="email" type="email" disabled name="correo" class="validate"
+                                                    required>
+                                                <label class="" for="email">Correo</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col s6">
+                                        <div class="input-grupo">
+                                            <span class="fas fa-id-card fa-2x"></span>
+                                            <div class="input-field">
+                                                <input id="DNI" name="dni" disabled pattern="[0-9]{8}" type="text"
+                                                    class="validate" required>
+                                                <label class="" for="DNI">DNI</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col s6">
+                                        <div class="input-grupo">
+                                            <span class="fas fa-mobile-alt fa-2x"></span>
+                                            <div class="input-field">
+                                                <input id="telefono" name="celular" disabled pattern="[0-9]{9}"
+                                                    type="text" class="validate" required>
+                                                <label class="" for="telefono">Celular</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row fila-estudiante">
+                                    <div class="col s6">
+                                        <div class="input-grupo">
+                                            <span class="fas fa-university fa-2x"></span>
+                                            <div class="input-field">
+                                                <input id="universidad" name="universidad" type="text"
+                                                    class="validat autocomplete">
+                                                <label class="" for="universidad">Universidad</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col s6">
+                                        <div class="input-grupo">
+                                            <span class="fas fa-id-card-alt fa-2x"></span>
+                                            <div class="input-field">
+                                                <input id="carnet" name="carnet" pattern="[0-9]{10}" maxlength="10"
+                                                    title="El codigo de alumno debe constar de 10 caracteres numericos"
+                                                    type="text" class="validate">
+                                                <label class="" for="carnet">Nº Carnet Universitario</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row fila-empresa">
+                                    <div class="col s6">
+                                        <div class="input-grupo">
+                                            <span class="fas fa-briefcase fa-2x"></span>
+                                            <div class="input-field">
+                                                <input id="carrera" type="text" disabled name="carrera" class="validate"
+                                                    required>
+                                                <label class="" for="carrera">Carrera</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col s6">
+                                        <div class="input-grupo">
+                                            <span class="fas fa-industry fa-2x"></span>
+                                            <div class="input-field">
+                                                <input id="empresa" type="text" name="empresa" class="validate">
+                                                <label class="" for="empresa">Empresa</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <!--INSCRIPCION DELEGACION-->
+                            <div id="contendor-delegacion">
+                                <div class="opciones">
+                                    <button class="btn-floating btn-large waves-effect waves-light red"
+                                        id="btn-borrar-delegacion" onclick="deleteAlldelegacion()"><i
+                                            class="fas fa-trash"></i></button>
+                                    &nbsp;
+                                    &nbsp;
+                                    <button class="btn-floating btn-large waves-effect waves-light green"
+                                        id="btn-agregar-delegacion"><i class="fas fa-plus"></i></button>
+                                </div>
+                                <div class="cartas">
+                                </div>
+                            </div>
+                        </div>
+                        <div style="width: 80%;margin:auto;">
+                            <button class="waves-effect waves-light btn-large boton-posicionado" type="submit"
+                                form="inscripcionPersonalForm">CONTINUAR</button>
+                        </div>
+                    </div>
+                    <div class="carousel-cell">
+                        <div class="contenedor-tabla"></div>
+                        <div style="width: 80%;margin:auto; text-align: right;">
+                            <button type="button" class="waves-effect waves-teal btn-flat"
+                                id="btn-atras-paso2">ATRAS</button>&nbsp;&nbsp;&nbsp;
+                            <button class="waves-effect waves-light btn-large" type="button"
+                                id="btn-irPaso3">CONTINUAR</button>
+                        </div>
+                    </div>
+                    <div class="carousel-cell">
+                        <form name="validacionForm" enctype="multipart/form-data" style="width: 50%;margin: 30px auto auto auto;">
+                            <div class="row">
+                                <div class="col s12">
+                                    <div class="input-grupo">
+                                        <span class="fas fa-credit-card fa-2x"></span>
+                                        <div class="input-field">
+                                            <input id="Operacion" type="text" name="operacion" class="validate"
+                                                required>
+                                            <label class="" for="Operacion">Nº de Operacion</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col s12">
+                                    <div class="file-field input-field">
+                                        <div class="btn">
+                                            <span>Baucher</span>
+                                            <input type="file" name="baucher" required accept="image/png, image/jpeg">
+                                        </div>
+                                        <div class="file-path-wrapper">
+                                            <input class="file-path validate" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <div style="width: 80%;margin:auto; text-align: right;">
+                            <button type="button" class="waves-effect waves-teal btn-flat"
+                                id="btn-atras-paso3">CANCELAR</button>&nbsp;&nbsp;&nbsp;
+                            <button class="waves-effect waves-light btn-large" type="submit"
+                                id="btn-irPaso3">ENVIAR</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h4>Inscripción Personalizada</h4>
+            <h6>Ingrese todos los campos por favor</h6>
+            <br>
+            <div class="row aviso">
+                <div class="col s9 card-panel teal lighten-5">
+                    <h6 style="color:#4CAF50 !important;padding: 10px"><span
+                            class="fa fa-info-circle"></span>&nbsp;INFO: Usted debe saber que será registrado como el
+                        delegado.</h6>
+                </div>
+                <div class="col s3 is-delegado center">
+                    <div class="switch">
+                        <label>
+                            <input type="checkbox" disabled checked>
+                            <span class="lever"></span>
+                            <h6>Delegado</h6>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <form name="inscripcionPersonalizadaForm" id="inscripcionPersonalizadaForm">
+                <div class="row">
+                    <div class="col s6">
+                        <div class="input-grupo">
+                            <span class="fas fa-user-tie fa-2x"></span>
+                            <div class="input-field">
+                                <input id="nombres2" name="nombres" type="text" class="validate" required>
+                                <label class="" for="nombres2">Nombres</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s6">
+                        <div class="input-grupo">
+                            <span class="fas fa-user-tie fa-2x"></span>
+                            <div class="input-field">
+                                <input id="apellidos2" name="apellidos" type="text" class="validate" required>
+                                <label class="" for="apellidos2">Apellidos</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s6">
+                        <div class="input-grupo">
+                            <span class="fas fa-envelope fa-2x"></span>
+                            <div class="input-field">
+                                <input id="email2" type="email" name="correo" class="validate" required>
+                                <label class="" for="email2">Correo</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s6">
+                        <div class="input-grupo">
+                            <span class="fas fa-id-card fa-2x"></span>
+                            <div class="input-field">
+                                <input id="DNI2" name="dni"
+                                    title="El numero de dni debe constar de 8 caracteres numericos." pattern="[0-9]{8}"
+                                    maxlength="8" type="text" class="validate" required>
+                                <label class="" for="DNI2">DNI</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s6">
+                        <div class="input-grupo">
+                            <span class="fas fa-university fa-2x"></span>
+                            <div class="input-field">
+                                <input id="universidad2" name="universidad" type="text" class="validate autocomplete">
+                                <label class="" for="universidad2">Empresa ó Universidad</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s6">
+                        <div class="input-grupo">
+                            <span class="fas fa-id-card-alt fa-2x"></span>
+                            <div class="input-field">
+                                <input id="carnet2" name="carnet" pattern="[0-9]{10}" type="text" class="validate">
+                                <label class="" for="carnet2">Nº Carnet Universitario</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s6">
+                        <div class="input-grupo">
+                            <span class="fas fa-briefcase fa-2x"></span>
+                            <div class="input-field">
+                                <input id="carrera2" type="text" name="carrera" class="validate" required>
+                                <label class="" for="carrera2">Carrera</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s6">
+                        <div class="input-grupo">
+                            <span class="fas fa-mobile-alt fa-2x"></span>
+                            <div class="input-field">
+                                <input id="telefono2" name="celular" pattern="[0-9]{9}"
+                                    title="En numero de celular debe cnstar de 9 caracteres numericos." maxlength="9"
+                                    type="text" class="validate" required>
+                                <label class="" for="telefono2">Celular</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="submit" class="waves-effect waves-green btn-flat" id="agregarCarta"
+                form="inscripcionPersonalizadaForm">CONFIRMAR</button>
+            <a href="#" class="modal-close waves-effect waves-green btn-flat">CANCELAR</a>
+        </div>
+    </div>
+
+    <script src="jquery-3.3.1.slim.min.js"></script>
+    <script src="toastr-master/build/toastr.min.js"></script>
+    <script src="icheck-1.x/icheck.min.js"></script>
+    <script src="flickity/flickity.pkgd.min.js"></script>
+    <script src="materialize/js/materialize.min.js"></script>
+    <script src="dataTable/jquery.dataTables.min.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

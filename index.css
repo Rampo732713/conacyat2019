@@ -1,0 +1,205 @@
+/*PASO*/
+.pasos{
+    display: flex; 
+    border-bottom:2px solid #bdbdbd;   
+}
+.pasos .paso{
+    position: relative;
+    padding: 20px 10px 30px 10px;
+    cursor: pointer;
+    transition: background 1s ease;
+}
+.pasos .paso:hover{
+background: #f7f7f7;
+border-radius: 10px 10px 0px 0px;
+}
+.pasos .paso.uno,
+.pasos .paso.dos{
+    width: 40%;
+}
+.pasos .paso.tres{
+    width: 20%;
+}
+
+.pasos .paso::after{
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: 17px;
+    height: 30px;
+    width: 30px;
+    color:#FFF;
+    border-radius: 50%;
+    background: rgba(0,0,0,.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+.pasos .paso.uno::after{
+    content: "1";
+}
+.pasos .paso.dos::after{
+    content: "2";
+}
+.pasos .paso.tres::after{
+    content: "3";
+}
+.pasos .paso.uno.active::after,
+.pasos .paso.dos.active::after,
+.pasos .paso.tres.active::after{
+background: #2196f3;
+}
+.pasos .paso.uno.echo::after,
+.pasos .paso.dos.echo::after,
+.pasos .paso.tres.echo::after{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 700;
+    content: "\f00c";
+}
+.pasos .paso span{
+   color: #666;
+   transform: translateX(50px);
+   display: inline-block;
+   font-family:sans-serif;
+}
+.pasos .paso.active span{
+    font-weight: bold;
+}
+.pasos .paso:not(.tres)::before{
+    content: "";
+    position: absolute;
+    background: #e7e7e7;
+    height: 1px;
+    width: 55%;
+    right: 0;
+    top: calc(50% - 5px);
+    transition: background 1s ease;
+}
+.pasos .paso:hover:not(.tres)::before{
+    background: #FFF;
+}
+.pasos .paso.dos::before{
+    width: 60%;
+}
+/*TIPO*/
+.tipo{
+    display: flex;
+    margin-top:30px; 
+}
+.tipo .personal,
+.tipo .delegacion{
+    width: 100%;
+}
+.tipo .personal label,
+.tipo .delegacion label{
+    display: block;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+.tipo .personal label span,
+.tipo .delegacion label span{
+    margin-left: 10px;
+    font-family:sans-serif;
+    color:#9e9e9e;
+    font-size: 15px;
+}
+/*FORMULARIOS*/
+
+.main-carousel .carousel-cell {
+    width: 100%; /* full width */
+    height: 750px; /* height of carousel */
+    margin-right: 0;
+  }
+
+.input-field .select-wrapper{
+    margin-left: 50px;
+}
+.input-field span[class*="fas"]{
+position: absolute;
+color: #616161 !important;
+top: 0px;
+}
+.input-grupo span[class*="fas"]{
+    position: absolute;
+color: #616161 !important;
+top:10px;
+}
+.label{
+    left:60px!important;
+}
+.input-grupo{
+    display: flex;
+    position: relative;
+} 
+.input-grupo .input-field{
+    margin-left: 50px;
+    width: calc(100% - 50px);
+}
+.boton-posicionado{
+    float: right;
+}
+.row.fila-estudiante > div.col,
+.row.fila-empresa > div.col:last-child{
+    display: none;
+}
+
+.contenedor-tabla{
+    padding: 10px;
+    margin-bottom:20px; 
+    height: 85%;
+    overflow-y: auto;
+}
+
+
+/*DELEGACION */
+  #contendor-delegacion,
+  #inscripcionPersonalForm
+  {
+    display: none;
+  }
+  #contendor-delegacion .opciones{
+      margin-top:20px;
+      text-align: center;
+      margin-bottom: 20px;
+  }
+
+  .cartas{
+      overflow-y: auto;
+      margin-bottom: 20px;
+      max-height: 400px;
+  }
+  .carta{
+      display: inline-block;
+      margin: 10px;
+      float: left;
+      border-radius: 5px;
+      overflow: hidden;
+      min-width: 250px;
+      max-width: 260px;
+  }
+  .carta .head{
+      background: #00acc1;
+      color:#FFF;
+      padding: 10px;
+      height:70px;
+      font-size: 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+      text-transform: lowercase;
+      text-align: center;
+  }
+  .carta .body{
+      background: #e0f7fa !important;
+      height:80px;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  .aviso.oculto{
+      display: none;
+  }
